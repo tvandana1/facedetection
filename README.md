@@ -27,7 +27,7 @@ It intializes infinite loop(to be broken by break statement).
 
     ret, img = cap.read()
 
-It captures frame by frame through webcam. ret is boolean regarding whether or not there was a return at all,at the frame is each frame that is returned. If there is no frame, you won't get an error, you will get none.
+It captures frame by frame through webcam. ret is boolean regarding whether or not there was a return at all, at the frame is each frame that is returned. If there is no frame, you won't get an error, you will get none.
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -60,11 +60,13 @@ Minimum possible object size. Objects smaller than that are ignored.
         roi_color = img[y:y+h, x:x+w]
  
  
-The function will detect faces on image. Next, we must "mark" the faces in the image, using , for example,  a blue rectangle. 
+The function will detect faces on image. Next, we must "mark" the faces in the image, using , for example, a blue rectangle. 
 
-This is done with this protion of code. If faces are found, it returns the positions of detected faces as a rectangle with the left up corner(x,y) and having "w" as its width and "h" as its height => (x,y,w,h). 
+This is done with this portion of code. If faces are found, it returns the positions of detected faces as a rectangle with the left up corner(x,y) and having "w" as its width and "h" as its height => (x,y,w,h). 
 
-Once we get these locations, we can create an ROI(Region Of Interest) for the face and present the result with imshow() function. cv2.rectangle function takes in the arguments frame, upper left coordinates of the face, lower right coordinates, the RGB code for the rectangle(that would contain the detected face) and thickness of rectangle. 
+Once we get these locations, we can create an ROI(Region Of Interest) for the face and present the result with imshow() function.
+
+cv2.rectangle function takes in the arguments frame, upper left coordinates of the face, lower right coordinates, the RGB code for the rectangle(that would contain the detected face) and thickness of rectangle. 
 
 The roi_gray defines the region of interest of the face and roi_color does the same for original frame.
  
@@ -72,7 +74,7 @@ The roi_gray defines the region of interest of the face and roi_color does the s
     cv2.imshow('video',img)
     
 Displays the resulting frame .
-Syntax: cv2.imshow(window_name,image) => window_name representing the name of the window in which image to be displayed and image to be displayed.
+Syntax: cv2.imshow(window_name,image) => window_name representing the name of the window in which image to be displayed.
 
     k = cv2.waitKey(30) & 0xff
     
@@ -80,7 +82,7 @@ cv2.waitKey() is a keyboard function. Its argument is the time in milliseconds. 
 
 cv2.waitKey() returns a 32 Bit integer value. The key input is in ASCII which is an 8-bit integer value. So you can only care about these 8 bits and want all other bits to be zero. This you can achieve with the above code. 0xff is the hexadecimal number FF which has integer value of 255.
     
-    if k == 27: # press 'ESC' to quit
+    if k == 27: 
         break
 
 Press ESC to quit.
