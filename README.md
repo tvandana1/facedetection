@@ -1,17 +1,15 @@
 ﻿# REAL TIME FACE DETECTION THROUGH WEBCAM USING OPENCV
  >import numpy as np
+ 
  >import cv2
  
  Download the haar cascade files in your directory and mention the path of haar cascade file within single quotes.
  
- 
->faceCascade = cv2.CascadeClassifier('C:\\Users\\Vandana\\mini2\\haarcascade_frontalface_default.xml')
-
+ >faceCascade = cv2.CascadeClassifier('C:\\Users\\Vandana\\mini2\\haarcascade_frontalface_default.xml')
 
 It loads the classifier from the file. Haar cascades are classifiers for object detection. The haarcascade_frontalface_default.xml is designed in opencv to detect frontal face.
 
 >cap = cv2.VideoCapture(0)
-
 
 This will return video from first webcam on your computer.
 
