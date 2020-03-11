@@ -11,19 +11,24 @@ It loads the classifier from the file. Haar cascades are classifiers for object 
 
 >cap = cv2.VideoCapture(0)
 
-This will return video from first webcam on your computer.
+This will return video from first webcam on your computer. If you have a secondary camera you can change 0 to 1.
 
->cap.set(3,640) # set Width
+>cap.set(3,640) 
 
->cap.set(4,480) # set Height
+It sets Width of the camera
+
+>cap.set(4,480) 
+
+It sets Height of the camera 
 
 >while True:
 
+It intializes infinite loop(to be broken by break statement)
+
 >    ret, img = cap.read()
 
-It captues 
+It captures frame by frame through webcam. ret is boolean regarding whether or not there was a return at all,at the frame is each frame that is returned. If there is no frame, you won't get an error, you will get none.
 
->    #img = cv2.flip(img, -1)
 
 >    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
